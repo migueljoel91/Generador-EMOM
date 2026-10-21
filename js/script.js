@@ -55,4 +55,5 @@ form.addEventListener("submit", (e) => {
 
     resultado.hidden = false;
     document.getElementById("tablaEmom").hidden = false;
+    document.getElementById("linkhidden").hidden = false;  // Muestra el enlace a la imagen del EMOM
 });

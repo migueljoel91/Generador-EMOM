@@ -67,7 +67,8 @@ h1 {
 form {
     margin: 2rem auto;
     padding: 1rem;
-    width: 50%;
+    width: 500px;
+    max-width: 100%;       /* evita que se desborde en pantallas más estrechas */
 }
 
 fieldset {
@@ -160,6 +161,19 @@ div p {
     width: fit-content;      /* la caja, y su borde, miden lo que el texto */
 }
 
+a {
+    display: block;
+    width: fit-content;      /* la caja, y su borde, miden lo que el texto */
+    margin: 0 auto;                /* centra el enlace */
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+a:hover {
+    color: var(--text-main);
+}
 
 /* Tablet y móvil grande */
 @media (max-width: 768px) {
