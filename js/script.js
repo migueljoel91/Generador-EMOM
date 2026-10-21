@@ -20,13 +20,13 @@ const resultadoTexto = document.getElementById("resultadoTexto");
 const tbody = document.querySelector("#tablaEmom tbody");
 
 const FASES = [
-    { minutos: "Min 1 - 2",   porcentaje: 65, reps: 5, enfoque: "Activación, ritmo constante y buena profundidad." },
-    { minutos: "Min 3 - 4",   porcentaje: 70, reps: 4, enfoque: "Tensión constante en el core y bajada controlada." },
-    { minutos: "Min 5 - 6",   porcentaje: 75, reps: 3, enfoque: "Salida explosiva desde el fondo (bottom)." },
-    { minutos: "Min 7 - 8",   porcentaje: 80, reps: 2, enfoque: "Carga pesada; máxima concentración en la postura." },
-    { minutos: "Min 9 - 10",  porcentaje: 85, reps: 1, enfoque: "Repetición sólida y pesada." },
-    { minutos: "Min 11 - 12", porcentaje: 90, reps: 1, enfoque: "Cerca del esfuerzo máximo sin perder la técnica." },
-    { minutos: "Min 13 - 14", porcentaje: 95, reps: 1, enfoque: "Último empuje; busca una repetición limpia y potente." }
+    { minutos: "Min 1 - 2",   porcentaje: 65, reps: 5, enfoque: "Activación, suavito con pesito de mariquita." },
+    { minutos: "Min 3 - 4",   porcentaje: 70, reps: 4, enfoque: "Pesito de mariquita pero con control." },
+    { minutos: "Min 5 - 6",   porcentaje: 75, reps: 3, enfoque: "Seguimos con pesito de mariquita." },
+    { minutos: "Min 7 - 8",   porcentaje: 80, reps: 2, enfoque: "Subimos ya a pesito de tomboy" },
+    { minutos: "Min 9 - 10",  porcentaje: 85, reps: 1, enfoque: "Una sola repetición así que más te vale levantar esa mierda." },
+    { minutos: "Min 11 - 12", porcentaje: 90, reps: 1, enfoque: "Piensa en el daño que te hizo de tu ex y tírale maricona." },
+    { minutos: "Min 13 - 14", porcentaje: 95, reps: 1, enfoque: "Último empuje; saca ese fuaaah." }
 ];
 
 form.addEventListener("submit", (e) => {
