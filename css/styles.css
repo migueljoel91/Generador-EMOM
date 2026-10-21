@@ -1,0 +1,240 @@
+*,*::after,*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --bg-color: #121214;         /* Fondo oscuro */
+    --bg-color-rgb: 18, 18, 20;  /* Mismo fondo oscuro en rgb para poder aplicar transparencia en main-header */
+    --surface-color: #1e1e24;    /* Fondo de las tarjetas de producto */
+    --text-main: #f5f5f7;        /* Texto claro principal */
+    --text-muted: #a0a0aa;       /* Texto secundario y descripciones */
+    --accent: #cc2b2b;           /* Rojo deportivo y Botones primarios */
+    --accent-hover: #9d1f1f;     /* Rojo al pasar el ratón */
+    --border-color: #2d2d35;     /* Bordes sutiles */
+    --surface-alt: #31313e;      /* Fondo para el apartado ¿por qué elegirnos? y reseñas */
+    --bg-footer: #080809;        /* Fondo para el footer */
+}
+
+header {
+    background-color: var(--bg-footer);
+    color: var(--text-main);
+    padding: 1rem;
+    text-align: center;
+    width: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    align-items: center;
+    justify-content: center;
+    font-family: Calibri, sans-serif;
+    min-height: 100vh;   /* el body mide al menos la pantalla entera */
+}
+
+main{
+    width: 100%;
+    padding: 1rem;
+    margin: 0 auto;
+    flex: 1;  /* Permite que el main ocupe todo el espacio disponible entre header y footer */
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background-color: var(--bg-footer);
+    color: var(--text-muted);
+    justify-content: center;
+    padding: 1rem;
+    width: 100%;
+    height: 5rem;
+    font-size: 1.3rem;
+}
+
+h1 {
+    margin: 2rem 2rem 2rem 2rem;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-main);
+    text-align: center;
+}
+
+form {
+    margin: 2rem auto;
+    padding: 1rem;
+    width: 50%;
+}
+
+fieldset {
+    display: grid;
+    grid-template-columns: auto auto;   /* columna de etiquetas + columna de campos */
+    justify-content: center;            /* centra el conjunto dentro del fieldset */
+    align-items: center;                /* alinea etiqueta y campo en vertical */
+    gap: 2rem;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+}
+ 
+label {
+    text-align: right;
+    font-weight: 500;
+    font-size: 1.3rem;
+}
+
+fieldset button {
+    grid-column: 1 / -1;                /* el botón ocupa las dos columnas */
+    justify-self: center;
+    margin-top: 1rem;
+    margin-bottom: 0.7rem;
+    color: var(--text-main);
+    background-color: var(--accent);
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+fieldset button:hover {
+    background-color: var(--accent-hover);
+    transition: background-color 0.3s ease;
+}
+
+fieldset input,
+fieldset select {
+    width: 14rem;
+    height: 2.5rem;
+    font-size: 1.1rem;
+    padding: 0 0.5rem;      /* algo de aire dentro del campo */
+}
+
+legend {
+  font-weight: bold;
+  padding: 0.5rem 0.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+
+/* ESTILO PARA TABLA DE RESULTADOS */
+
+.resultado {
+    margin: 0 auto 2rem;
+    text-align: center;
+}
+
+.tabla {
+    overflow-x: auto;           /* en móvil permite deslizar la tabla en vez de romper la página */
+}
+
+table {
+    margin: 1rem auto;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 0.9rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+th {
+    color: var(--accent);
+    border-bottom: 2px solid var(--border-color);
+}
+
+div p {
+    font-size: 1.5rem;
+    margin: 0.5rem auto;      /* auto a los lados para que siga centrado */
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--border-color);
+    width: fit-content;      /* la caja, y su borde, miden lo que el texto */
+}
+
+
+/* Tablet y móvil grande */
+@media (max-width: 768px) {
+    form {
+        width: 80%;
+    }
+
+    h1 {
+        font-size: 1.7rem;
+    }
+
+    .resultado p {
+        font-size: 1.3rem;
+    }
+}
+
+/* Móvil */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.4rem;
+        margin: 1.5rem 1rem;
+    }
+
+    form {
+        width: 100%;
+        padding: 0;
+    }
+
+    fieldset {
+        grid-template-columns: 1fr;     /* etiqueta encima del campo */
+        gap: 0.5rem;
+    }
+
+    legend {
+        font-size: 1.3rem;
+    }
+
+    label {
+        text-align: center;
+        font-size: 1.15rem;
+    }
+
+    fieldset select + label {
+        margin-top: 1rem;               /* separa una pareja de la siguiente */
+    }
+
+    fieldset input,
+    fieldset select {
+        width: 100%;
+        max-width: 18rem;
+        justify-self: center;
+    }
+
+    .resultado p {
+        font-size: 1.1rem;
+    }
+
+    th, td {
+        padding: 0.6rem 0.5rem;
+        font-size: 0.9rem;
+    }
+
+    footer {
+        height: auto;                   /* deja crecer el footer si el texto se parte en líneas */
+        min-height: 5rem;
+        font-size: 1rem;
+    }
+}
+
+/* 
+
+En móvil, el grid pasa a una sola columna porque 14rem de campo más la etiqueta y el gap de 2rem no caben en 360px.
+fieldset select + label selecciona la etiqueta que va justo después del select (la del RM) para darle aire respecto al campo anterior.
+Cambié el height: 5rem del footer a auto con min-height, porque con una altura fija el texto de copyright se desbordaría al partirse en varias líneas.
+La tabla ya tiene overflow-x: auto en .tabla, así que si aun con el padding reducido no cabe, se desliza horizontalmente en vez de romper la página.
+Los px de los breakpoints se pueden ajustar: 480px cubre la mayoría de móviles en vertical y 768px las tablets.
+
+*/

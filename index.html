@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de EMOM</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <script src="./js/script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Haz tu propio EMOM</h1>
+    </header>
+
+    <main>
+        <div class="container">
+            <form id="emomForm">
+                <fieldset>
+                <legend>Generador de EMOM</legend>
+                <label for="ejercicio">Ejercicio:</label>
+                <select id="ejercicio" name="ejercicio" required>
+                    <option value="">Selecciona un ejercicio</option>
+                    <option value="backSquat">Back squat</option>
+                    <option value="deadlift">Deadlift</option>
+                    <option value="pushPress">Push Press</option>
+                    <option value="frontSquat">Front squat</option>
+                </select>
+
+                <label for="rm">RM (en kg):</label>
+                <input type="number" id="rm" name="rm" min="45" max="400"required>
+
+                <button type="submit">Generar EMOM</button>
+                </fieldset>
+            </form>
+        </div>
+
+        <div id="resultado" class="resultado">
+            <p id="resultadoTexto"></p>
+
+            <div class="tabla">
+                <table id="tablaEmom" hidden>
+                    <thead>
+                        <tr>
+                            <th>Minuto</th>
+                            <th>Repeticiones</th>
+                            <th>Peso (kg)</th>
+                            <th>Enfoque</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Las filas se generarán dinámicamente -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Copyright &copy; 2026. Dedicado a mis panas los/as homosexuales.</p>
+    </footer>
+</body>
+</html>
