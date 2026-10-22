@@ -10,7 +10,6 @@ Aplicación web hecha con HTML, CSS y JavaScript que genera un entrenamiento EMO
   - Minutos de cada fase.
   - Repeticiones por minuto (bajan de 5 a 1 según avanza el entrenamiento).
   - Peso en kg, calculado como porcentaje del RM (del 65% al 95%) y redondeado a discos de 2,5 kg.
-  - Enfoque o sensación de cada fase.
 - Diseño oscuro y adaptable (responsive) con media queries para tablet y móvil.
 - Footer siempre al final de la página.
 
