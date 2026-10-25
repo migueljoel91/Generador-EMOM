@@ -16,25 +16,25 @@
         <div class="container">
             <form id="emomForm">
                 <fieldset>
-                <legend>Generador de EMOM</legend>
-                <label for="ejercicio">Ejercicio:</label>
-                <select id="ejercicio" name="ejercicio" required>
-                    <option value="">Selecciona un ejercicio</option>
-                    <option value="Back Squat">Back squat</option>
-                    <option value="Deadlift">Deadlift</option>
-                    <option value="Push Press">Push Press</option>
-                    <option value="Front Squat">Front squat</option>
-                </select>
+                    <legend>Generador de EMOM</legend>
+                    <label for="ejercicio">Ejercicio:</label>
+                    <select id="ejercicio" name="ejercicio" required>
+                        <option value="">Selecciona un ejercicio</option>
+                        <option value="Back Squat">Back squat</option>
+                        <option value="Deadlift">Deadlift</option>
+                        <option value="Push Press">Push Press</option>
+                        <option value="Front Squat">Front squat</option>
+                    </select>
 
-                <label for="rm">RM (en kg):</label>
-                <input type="number" id="rm" name="rm" min="45" max="400" required>
+                    <label for="rm">RM (en kg):</label>
+                    <input type="number" id="rm" name="rm" min="45" max="400" step="any" required>
 
-                <button type="submit">Generar EMOM</button>
+                    <button type="submit">Generar EMOM</button>
                 </fieldset>
             </form>
         </div>
 
-        <div id="resultado" class="resultado">
+        <div id="resultado" class="resultado" hidden>
             <p id="resultadoTexto"></p>
 
             <div class="tabla">

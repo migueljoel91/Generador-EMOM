@@ -3,12 +3,12 @@
 const rm = document.getElementById("rm");
 
 rm.addEventListener("input", () => {
-    rm.setCustomValidity("");               // limpia el mensaje anterior
+    rm.setCustomValidity("");   // limpia el mensaje anterior
 
     if (rm.validity.rangeUnderflow) {
-        rm.setCustomValidity("¿No te da vergüenza o qué pedazo de homosexual? Sube eso anda");
+        rm.setCustomValidity("Ese peso es muy bajo. Sube un poco el RM.");
     } else if (rm.validity.rangeOverflow) {
-        rm.setCustomValidity("Me da que te flipaste un poco, ¿no? Baja eso anda");
+        rm.setCustomValidity("Ese peso es muy alto. Revisa el RM.");
     }
 });
 
@@ -32,27 +32,23 @@ const FASES = [
 form.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    const select = document.getElementById("ejercicio");
-    const ejercicio = select.value;
-    const rmKg = Number(document.getElementById("rm").value);
+    const ejercicio = document.getElementById("ejercicio").value;
+    const rmKg = Number(rm.value);
 
     resultadoTexto.textContent = `EMOM de 14 minutos: ${ejercicio} (RM: ${rmKg} kg)`;
 
-    tbody.innerHTML = "";
+    tbody.replaceChildren();   // vacía la tabla antes de rellenarla
 
     FASES.forEach((fase) => {
         const peso = Math.round((rmKg * fase.porcentaje / 100) / 2.5) * 2.5;   // redondea a discos de 2,5 kg
 
-        const fila = document.createElement("tr");
-        fila.innerHTML = `
-            <td>${fase.minutos}</td>
-            <td>${fase.reps} ${fase.reps === 1 ? "Rep" : "Reps"}</td>
-            <td>${peso} kg</td>
-        `;
-        tbody.appendChild(fila);
+        const fila = tbody.insertRow();
+        fila.insertCell().textContent = fase.minutos;
+        fila.insertCell().textContent = `${fase.reps} ${fase.reps === 1 ? "Rep" : "Reps"}`;
+        fila.insertCell().textContent = `${peso} kg`;
     });
 
     resultado.hidden = false;
     document.getElementById("tablaEmom").hidden = false;
-    document.getElementById("linkhidden").hidden = false;  // Muestra el enlace a la imagen del EMOM
+    document.getElementById("linkhidden").hidden = false;   // muestra el enlace a la imagen del EMOM
 });
