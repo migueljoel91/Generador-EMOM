@@ -39,14 +39,14 @@ form.addEventListener("submit", (e) => {
 
     tbody.replaceChildren();   // vacía la tabla antes de rellenarla
 
-    FASES.forEach((fase) => {
+    for (const fase of FASES) {
         const peso = Math.round((rmKg * fase.porcentaje / 100) / 2.5) * 2.5;   // redondea a discos de 2,5 kg
 
         const fila = tbody.insertRow();
         fila.insertCell().textContent = fase.minutos;
         fila.insertCell().textContent = `${fase.reps} ${fase.reps === 1 ? "Rep" : "Reps"}`;
         fila.insertCell().textContent = `${peso} kg`;
-    });
+    }
 
     resultado.hidden = false;
     document.getElementById("tablaEmom").hidden = false;
